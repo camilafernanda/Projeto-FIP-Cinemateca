@@ -117,20 +117,6 @@ tr:last-child td {
     border-bottom: none;
 }
 
-select[class=modelo_duracao_filme] {
-    word-wrap: normal;
-    border-radius: 8px 8px 8px 8px;
-    border: none;
-    background-color: var(--azul-medio);
-    color: #fff;
-    font-size: 16px;
-    outline: 0;
-    cursor: pointer;
-    height: 40px;
-    width: 120px;
-    margin-top: 10px;
-}
-
 select[class=modelo_categoria],[class=modelo_conclusao] {
     word-wrap: normal;
     border: none;

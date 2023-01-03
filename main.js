@@ -1,34 +1,45 @@
-function adicionaFilme() {
+let duracaoTotal = [];
+let duracaoAssistida = [];
+let duracaoDesejada = [];
+
+function adicionaFilme(duracaoTotal, duracaoAssistida, duracaoDesejada) {
     // let nomeFilme = document.querySelector('#nome_filme').value;
     // let categoria = document.querySelector('#categoria').value;
-    let duracao = [];
+    
     let campo = document.querySelector('#duracao_filme').value;
-    let conclusao = document.querySelector('#modelo_conclusao').value;
+    let conclusao = document.querySelector('#conclusao').value;
 
-    duracao.push(campo);
-    console.log(duracao);
+    let [h, m] = campo.split(':');
+    h = Number(h);
+    m = Number(m);
+    let duracaoEmMinutos = (h * 60) + m;
 
-    let modeloDuracao = document.querySelector('#modelo_duracao_filme').value;
-    if (modeloDuracao == 'horas') {
-        duracao = duracao * 60;
-    }
+    duracaoTotal.push(duracaoEmMinutos);
+    console.log(duracaoTotal);
 
     let minutosAssistidos = 0;
     let minutosDesejados = 0;
 
-    for(let i=0; i<duracao.length; i++) {
+    for(let i=0; i<duracaoTotal.length; i++) {
         if(conclusao == 'sim') {
-            minutosAssistidos += duracao[i];
+            duracaoDesejada[i] = 0;
+            duracaoAssistida.push(duracaoEmMinutos);
+            minutosAssistidos += duracaoAssistida[i];
         } else {
-            minutosDesejados += duracao[i];
+            duracaoAssistida[i] = 0;
+            duracaoDesejada.push(duracaoEmMinutos);
+            minutosDesejados += duracaoDesejada[i];
         }
+        console.log(duracaoAssistida);
         console.log(minutosAssistidos);
+        console.log(duracaoDesejada);
+        console.log(minutosDesejados);
     }
 
-    let resumoDuracao = document.querySelector('#horas_assistidas');
-    resumoDuracao.textContent = minutosAssistidos;
+    let resumoDuracao = document.querySelector('#minutos_assistidos');
+    resumoDuracao.textContent = minutosAssistidos + "min";
 
-    let resumoDuracaoDesejada = document.querySelector('#horas_desejadas');
-    resumoDuracaoDesejada.textContent = minutosDesejados;
+    let resumoDuracaoDesejada = document.querySelector('#minutos_desejados');
+    resumoDuracaoDesejada.textContent = minutosDesejados + "min";
 
 }
