@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="visual.css">
+    <title>Lista de filmes</title>
+</head>
+
+<body>
+
+    <form action="#" id="formulario">
+        <h2>Cinemateca</h2>
+
+        <label for="nome_filme">Nome do filme</label>
+        <input id="nome_filme" placeholder="Digite o nome do filme" required type="text" />
+
+        <label for="capa_filme">Capa do filme</label>
+        <input id="capa_filme" placeholder="Cole o link da imagem da capa do filme" required type="url" />
+
+        <label for="duracao_filme">Duração</label>
+        <input id="duracao_filme" placeholder="Digite a duração do filme" required type="time" />
+
+        <label for="categoria">Categoria</label>
+        <select class="modelo_categoria">
+            <option value="romance">Romance</option>
+            <option value="terror">Terror</option>
+            <option value="ficcao">Ficção cietífica</option>
+            <option value="aventura">Aventura</option>
+            <option value="biografia">Biografia</option>
+            <option value="drama">Drama</option>
+            <option value="comedia">Comédia</option>
+            <option value="acao">Ação</option>
+        </select>
+
+        <label for="conclusao">Já assisti?</label>
+        <select id="conclusao" class="modelo_conclusao">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+
+        <!-- <fieldset>
+            <legend> Categoria </legend>
+
+            <div class="coluna1">
+                <input type="checkbox" id="romance" name="interesse" value="romance">
+                <label for="romance"> Romance </label>
+
+                <input type="checkbox" id="terror" name="interesse" value="terror">
+                <label for="terror"> Terror </label>
+
+                <input type="checkbox" id="ficcao" name="interesse" value="ficcao">
+                <label for="ficcao"> Ficção cietífica </label>
+
+                <input type="checkbox" id="aventura" name="interesse" value="aventura">
+                <label for="aventura"> Aventura </label>
+            </div>
+
+            <div class="coluna2">
+                <input type="checkbox" id="biografia" name="interesse" value="biografia">
+                <label for="biografia"> Biografia </label>
+
+                <input type="checkbox" id="drama" name="interesse" value="drama">
+                <label for="drama"> Drama </label>
+
+                <input type="checkbox" id="comedia" name="interesse" value="comedia">
+                <label for="comedia"> Comédia </label>
+
+                <input type="checkbox" id="acao" name="interesse" value="acao">
+                <label for="acao"> Ação </label>
+            </div>
+
+        </fieldset> -->
+
+        <input type="button" value="Adicionar filme" onclick="adicionaFilme(duracaoTotal, duracaoAssistida, duracaoDesejada)">
+    </form>
+
+    <h2>Resumo</h2>
+    <table>
+        <tr>
+            <td>Quantidade de minutos assistidas</td>
+            <td id="minutos_assistidos">0h0min</td>
+        </tr>
+        <tr>
+            <td>Quantidade de minutos a assistir</td>
+            <td id="minutos_desejados">0h0min</td>
+        </tr>
+    </table>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
