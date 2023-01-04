@@ -3,8 +3,9 @@ let duracaoAssistida = [];
 let duracaoDesejada = [];
 
 function adicionaFilme(duracaoTotal, duracaoAssistida, duracaoDesejada) {
-    // let nomeFilme = document.querySelector('#nome_filme').value;
-    // let categoria = document.querySelector('#categoria').value;
+    let nomeFilme = document.querySelector('#nome_filme').value;
+    let categoria = document.querySelector('#categoria').value;
+    let capaFilme = document.querySelector('#capa_filme').value;
     
     let campo = document.querySelector('#duracao_filme').value;
     let conclusao = document.querySelector('#conclusao').value;
@@ -38,4 +39,27 @@ function adicionaFilme(duracaoTotal, duracaoAssistida, duracaoDesejada) {
             
         }
     }
+
+    // let elementoCapaFilme =
+    // "<span><h2>" +
+    // nomeFilme +
+    // "</h2>" +
+    // "<p>" +
+    // "</p>" +
+    // "<img src=" +
+    // capaFilme +
+    // "><br><button class='apagarBotao' onClick='removerLivro(this)'>Delete</button></span>";
+
+    let tabela = document.querySelector('#tabela_filmes');
+    let linha = tabela.insertRow(-1);
+
+    let cellCapaFilme = linha.insertCell();
+    let cellNome = linha.insertCell();
+    let cellCategoria = linha.insertCell();
+    let cellDuracao = linha.insertCell();
+
+    cellCapaFilme.innerHTML = "<img src=" + capaFilme + ">";
+    cellNome.innerHTML = nomeFilme;
+    cellCategoria.innerHTML = categoria;
+    cellDuracao.innerHTML = duracaoEmMinutos + "min";
 }

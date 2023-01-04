@@ -24,15 +24,15 @@
         <input id="duracao_filme" placeholder="Digite a duração do filme" required type="time" />
 
         <label for="categoria">Categoria</label>
-        <select class="modelo_categoria">
-            <option value="romance">Romance</option>
-            <option value="terror">Terror</option>
-            <option value="ficcao">Ficção cietífica</option>
-            <option value="aventura">Aventura</option>
-            <option value="biografia">Biografia</option>
-            <option value="drama">Drama</option>
-            <option value="comedia">Comédia</option>
-            <option value="acao">Ação</option>
+        <select id="categoria" class="modelo_categoria">
+            <option>Romance</option>
+            <option>Terror</option>
+            <option>Ficção cietífica</option>
+            <option>Aventura</option>
+            <option>Biografia</option>
+            <option>Drama</option>
+            <option>Comédia</option>
+            <option>Ação</option>
         </select>
 
         <label for="conclusao">Já assisti?</label>
@@ -87,6 +87,18 @@
             <td>Quantidade de minutos a assistir</td>
             <td id="minutos_desejados">0h0min</td>
         </tr>
+    </table>
+
+    <table id="tabela_filmes">
+        <thead>
+            <tr>
+                <td>Filme</td>
+                <td>Nome</td>
+                <td>Categoria</td>
+                <td>Duração</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
     </table>
 
     <script src="main.js"></script>
