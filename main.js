@@ -15,7 +15,6 @@ function adicionaFilme(duracaoTotal, duracaoAssistida, duracaoDesejada) {
     let duracaoEmMinutos = (h * 60) + m;
 
     duracaoTotal.push(duracaoEmMinutos);
-    console.log(duracaoTotal);
 
     let minutosAssistidos = 0;
     let minutosDesejados = 0;
@@ -25,21 +24,18 @@ function adicionaFilme(duracaoTotal, duracaoAssistida, duracaoDesejada) {
             duracaoDesejada[i] = 0;
             duracaoAssistida.push(duracaoEmMinutos);
             minutosAssistidos += duracaoAssistida[i];
+
+            let resumoDuracao = document.querySelector('#minutos_assistidos');
+            resumoDuracao.textContent = minutosAssistidos + "min";
+            
         } else {
             duracaoAssistida[i] = 0;
             duracaoDesejada.push(duracaoEmMinutos);
             minutosDesejados += duracaoDesejada[i];
+
+            let resumoDuracaoDesejada = document.querySelector('#minutos_desejados');
+            resumoDuracaoDesejada.textContent = minutosDesejados + "min";
+            
         }
-        console.log(duracaoAssistida);
-        console.log(minutosAssistidos);
-        console.log(duracaoDesejada);
-        console.log(minutosDesejados);
     }
-
-    let resumoDuracao = document.querySelector('#minutos_assistidos');
-    resumoDuracao.textContent = minutosAssistidos + "min";
-
-    let resumoDuracaoDesejada = document.querySelector('#minutos_desejados');
-    resumoDuracaoDesejada.textContent = minutosDesejados + "min";
-
 }
